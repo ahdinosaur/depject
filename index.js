@@ -17,7 +17,6 @@ module.exports = function combine () {
   })
 
   var deps = getDependencyOrder(modules, allGives)
-  console.log('deps', deps)
 
   var sockets = {}
 
