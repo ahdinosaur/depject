@@ -98,7 +98,7 @@ module.exports = function combine () {
 
       //create module, and get function(s) it returns.
       if(!isFunction(module.create))
-        throw new Error('module:'+key + ' did not have a create function')
+        throw new Error('module: '+key+' did not have a create function')
       var exported = module.create(m)
 
       //for the functions it declares, merge these into newSockets
@@ -108,7 +108,7 @@ module.exports = function combine () {
         N.each(module.gives, function (_, path) {
           var fun = N.get(exported, path)
           if(!isFunction(fun))
-            throw new Error('export declared but not returned'+path.join('.') + ' in:'+key)
+            throw new Error('export declared but not returned '+path.join('.') + ' in:'+key)
           append(newSockets, path, fun)
         })
     })
